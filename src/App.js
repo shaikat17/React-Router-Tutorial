@@ -9,6 +9,7 @@ import SingleProduct from "./Components/SingleProduct";
 import Dashboard from "./Components/Dashboard"
 import Login from "./Components/Login"
 import ProtectedRoute from "./Components/ProtectedRoute";
+import SharedProductLayout from "./Components/SharedProductLayout";
 
 
 function App() {
@@ -19,8 +20,10 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/:productID" element={<SingleProduct />} />
+          <Route path="products" element={<SharedProductLayout />}>
+          <Route index element={<Products />} />
+          <Route path=":productID" element={<SingleProduct />} />
+          </Route>
           <Route path="login" element={<Login setUser={setUser} />} />
           <Route path="dashboard" element={
             <ProtectedRoute user={user}>
