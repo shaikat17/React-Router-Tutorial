@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
-    <div>Dashboard</div>
+    <section className="section">
+    <h4>Hello, {props.user?.name} </h4></section>
   )
 }
 
