@@ -4,6 +4,7 @@ import About from "./Components/About";
 import Products from "./Components/Products";
 import Error from "./Components/Error";
 import SharedLayout from "./Components/SharedLayout";
+import SingleProduct from "./Components/SingleProduct";
 
 
 
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:productID" element={<SingleProduct />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
